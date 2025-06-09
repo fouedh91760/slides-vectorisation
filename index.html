@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Vectorisation - Présentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .slides-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1629 100%);
+            border-radius: 20px;
+            padding: 60px;
+            display: none;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .slide.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #667eea;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #a78bfa;
+        }
+        
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+        
+        .code-block {
+            background: #0a0e27;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 1.1em;
+            overflow-x: auto;
+            color: #94a3b8;
+        }
+        
+        .demo-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8b5cf6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-box::before {
+            content: "DÉMO";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            color: #8b5cf6;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .solution-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid #22c55e;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #475569;
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            background: #1e293b;
+            border: 2px solid #475569;
+            border-radius: 10px;
+            padding: 15px 25px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        
+        .timeline-item.active {
+            background: #667eea;
+            border-color: #667eea;
+        }
+        
+        .timeline-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .arch-component {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .arch-component:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .arch-component h4 {
+            color: #a78bfa;
+            margin-bottom: 10px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .metric-card h3 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .metric-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1em;
+            margin: 0;
+        }
+        
+        .nav-buttons {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        button {
+            background: #667eea;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover:not(:disabled) {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: #64748b;
+            font-size: 1.2em;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.2em;
+            color: #cbd5e1;
+        }
+        
+        ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.3em;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .flow-item {
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 10px;
+            padding: 20px 30px;
+            position: relative;
+        }
+        
+        .flow-arrow {
+            font-size: 2em;
+            color: #667eea;
+        }
+        
+        .vision-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .vision-box h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        <!-- Slide 1: Titre -->
+        <div class="slide active">
+            <div class="slide-number">1 / 12</div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
+                <h1 style="font-size: 4.5em; margin-bottom: 40px;">Projet Vectorisation</h1>
+                <h2 style="color: #cbd5e1; font-size: 2em; font-weight: 400;">Industrialisation de notre Base de Connaissance</h2>
+                <p style="margin-top: 60px; font-size: 1.6em;">
+                    <span class="emoji">🚀</span> Agent Conversationnel MCP
+                </p>
+                <div class="vision-box" style="margin-top: 60px;">
+                    <p style="font-size: 1.3em; margin: 0;">« Transformer nos documents en intelligence accessible »</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Le Problème -->
+        <div class="slide">
+            <div class="slide-number">2 / 12</div>
+            <h1>Le Problème Actuel</h1>
+            <div class="problem-box">
+                <h3><span class="emoji">😓</span> Notre réalité aujourd'hui</h3>
+                <ul>
+                    <li>Des centaines de documents métier éparpillés</li>
+                    <li>Formats multiples : PDF, Excel, Markdown, Word...</li>
+                    <li>Recherche inefficace et chronophage</li>
+                    <li>L'agent conversationnel ne peut pas accéder à cette richesse</li>
+                </ul>
+            </div>
+            <div class="flow-diagram">
+                <div class="flow-item">
+                    <p>Question utilisateur</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item" style="border-color: #ef4444;">
+                    <p>Agent perdu</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item" style="border-color: #ef4444;">
+                    <p>Réponse incomplète</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: La Vision -->
+        <div class="slide">
+            <div class="slide-number">3 / 12</div>
+            <h1>Notre Vision</h1>
+            <div class="solution-box">
+                <h3><span class="emoji">✨</span> Ce qu'on veut construire</h3>
+                <ul>
+                    <li>Upload simple : glisser-déposer n'importe quel document</li>
+                    <li>Traitement automatique en quelques secondes</li>
+                    <li>Base vectorielle optimisée pour l'IA</li>
+                    <li>Agent conversationnel ultra-performant</li>
+                </ul>
+            </div>
+            <div class="flow-diagram">
+                <div class="flow-item">
+                    <p>Nouveau document</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item pulse" style="border-color: #22c55e;">
+                    <p>Vectorisation auto</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item" style="border-color: #22c55e;">
+                    <p>Agent enrichi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Ce qui existe déjà -->
+        <div class="slide">
+            <div class="slide-number">4 / 12</div>
+            <h1>Notre Base Actuelle</h1>
+            <h3><span class="emoji">🏗️</span> Ce qu'on a déjà construit</h3>
+            <div class="architecture-grid">
+                <div class="arch-component">
+                    <h4>Pinecone</h4>
+                    <p>Base vectorielle<br>Index: faq-vtc</p>
+                </div>
+                <div class="arch-component">
+                    <h4>Scripts Python</h4>
+                    <p>Indexation<br>Recherche<br>API REST</p>
+                </div>
+                <div class="arch-component">
+                    <h4>Agent GPT-4</h4>
+                    <p>RetrievalQA<br>Embeddings OpenAI</p>
+                </div>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>10+</h3>
+                    <p>Documents indexés</p>
+                </div>
+                <div class="metric-card">
+                    <h3>FAQ VTC</h3>
+                    <p>Domaine métier</p>
+                </div>
+                <div class="metric-card">
+                    <h3>15</h3>
+                    <p>Chunks/recherche</p>
+                </div>
+                <div class="metric-card">
+                    <h3>API</h3>
+                    <p>FastAPI ready</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Démo Live -->
+        <div class="slide">
+            <div class="slide-number">5 / 12</div>
+            <h1>Démo : État Actuel</h1>
+            <div class="demo-box">
+                <h3>Test en direct avec agent.py</h3>
+                <div class="code-block">
+                    <p>❓ Pose ta question : <span style="color: #fbbf24">Quelles sont les conditions pour devenir VTC ?</span></p>
+                    <p style="margin-top: 15px;">💬 Réponse : Pour devenir chauffeur VTC, vous devez...</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <h3>Points forts <span class="emoji">✅</span></h3>
+                <ul>
+                    <li>Recherche sémantique fonctionnelle</li>
+                    <li>Réponses contextualisées avec GPT-4</li>
+                    <li>API déployable sur Render</li>
+                </ul>
+                <h3 style="margin-top: 30px;">Limitations actuelles <span class="emoji">⚠️</span></h3>
+                <ul>
+                    <li>Processus manuel d'indexation</li>
+                    <li>Formats limités</li>
+                    <li>Pas d'interface utilisateur</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: Architecture Cible -->
+        <div class="slide">
+            <div class="slide-number">6 / 12</div>
+            <h1>Architecture Cible</h1>
+            <div style="text-align: center; margin: 30px 0;">
+                <div class="code-block" style="display: inline-block; text-align: left;">
+                    <pre>
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│   Interface UI  │────▶│   API Gateway    │────▶│ Queue Manager   │
+│   (Streamlit)   │     │    (FastAPI)     │     │    (Celery)     │
+└─────────────────┘     └──────────────────┘     └─────────────────┘
+                                │                          │
+                                ▼                          ▼
+                        ┌──────────────────┐      ┌─────────────────┐
+                        │  Metadata Store  │      │ Document Parser │
+                        │   (PostgreSQL)   │      │   (LangChain)   │
+                        └──────────────────┘      └─────────────────┘
+                                                          │
+                                                          ▼
+                                                  ┌─────────────────┐
+                                                  │    Pinecone     │
+                                                  │ Vector Database │
+                                                  └─────────────────┘</pre>
+                </div>
+            </div>
+            <div class="architecture-grid" style="margin-top: 40px;">
+                <div class="arch-component">
+                    <h4>Frontend</h4>
+                    <p>Upload drag & drop<br>Dashboard temps réel</p>
+                </div>
+                <div class="arch-component">
+                    <h4>Processing</h4>
+                    <p>Multi-format<br>Chunking intelligent</p>
+                </div>
+                <div class="arch-component">
+                    <h4>Storage</h4>
+                    <p>Vectorisation<br>Métadonnées riches</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Roadmap 3 mois -->
+        <div class="slide">
+            <div class="slide-number">7 / 12</div>
+            <h1>Roadmap sur 3 Mois</h1>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <h4>Mois 1</h4>
+                    <p>MVP Fonctionnel</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Mois 2</h4>
+                    <p>Optimisation</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Mois 3</h4>
+                    <p>Industrialisation</p>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: #22c55e;">Sprint 1-2 (MVP)</h3>
+                    <ul>
+                        <li>Interface upload basique</li>
+                        <li>Support PDF, MD, TXT</li>
+                        <li>Pipeline automatique</li>
+                        <li>Dashboard simple</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #fbbf24;">Sprint 3-4 (Amélioration)</h3>
+                    <ul>
+                        <li>Support Excel, Word</li>
+                        <li>Chunking sémantique</li>
+                        <li>Optimisation embeddings</li>
+                        <li>Métadonnées enrichies</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #8b5cf6;">Sprint 5-6 (Production)</h3>
+                    <ul>
+                        <li>Watch folders auto</li>
+                        <li>API complète</li>
+                        <li>Monitoring avancé</li>
+                        <li>CI/CD & Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Stack Technique -->
+        <div class="slide">
+            <div class="slide-number">8 / 12</div>
+            <h1>Stack Technique Proposé</h1>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+                <div>
+                    <h3><span class="emoji">🔧</span> Backend</h3>
+                    <ul>
+                        <li><strong>Python 3.9+</strong> - Langage principal</li>
+                        <li><strong>FastAPI</strong> - API REST (déjà en place)</li>
+                        <li><strong>Celery + Redis</strong> - Tâches async</li>
+                        <li><strong>PostgreSQL</strong> - Métadonnées</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;"><span class="emoji">📄</span> Parsing</h3>
+                    <ul>
+                        <li><strong>LangChain</strong> - Framework principal</li>
+                        <li><strong>Unstructured.io</strong> - Multi-format</li>
+                        <li><strong>PyPDF2</strong> - PDFs complexes</li>
+                        <li><strong>Pandas</strong> - Excel/CSV</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3><span class="emoji">🎨</span> Frontend</h3>
+                    <ul>
+                        <li><strong>Streamlit</strong> - MVP rapide</li>
+                        <li><strong>React</strong> - Version production</li>
+                        <li><strong>Tailwind CSS</strong> - Styling</li>
+                        <li><strong>Recharts</strong> - Visualisations</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;"><span class="emoji">🧠</span> IA/Vectorisation</h3>
+                    <ul>
+                        <li><strong>Pinecone</strong> - Base vectorielle</li>
+                        <li><strong>OpenAI</strong> - Embeddings</li>
+                        <li><strong>Sentence-Transformers</strong> - Alternative OS</li>
+                        <li><strong>GPT-4</strong> - Agent conversationnel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Ton Rôle -->
+        <div class="slide">
+            <div class="slide-number">9 / 12</div>
+            <h1>Ton Rôle dans ce Projet</h1>
+            <div class="vision-box">
+                <h2 style="font-size: 2.5em;">Tu es le CTO de ce projet</h2>
+                <p style="font-size: 1.4em;">Ownership technique complet</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px;">
+                <div>
+                    <h3><span class="emoji">🎯</span> Responsabilités</h3>
+                    <ul>
+                        <li>Architecture technique</li>
+                        <li>Choix technologiques</li>
+                        <li>Développement du MVP</li>
+                        <li>Tests et optimisations</li>
+                        <li>Documentation complète</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3><span class="emoji">🤝</span> Support disponible</h3>
+                    <ul>
+                        <li>Mentorat hebdomadaire</li>
+                        <li>Accès aux ressources</li>
+                        <li>Validation architecture</li>
+                        <li>Tests avec vrais utilisateurs</li>
+                        <li>Feedback continu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-box" style="margin-top: 40px;">
+                <p style="font-size: 1.3em; text-align: center; margin: 0;">
+                    « Dans 3 mois, c'est toi qui formeras le prochain sur cette solution »
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Objectifs Semaine 1 -->
+        <div class="slide">
+            <div class="slide-number">10 / 12</div>
+            <h1>Cette Semaine : Sprint 0</h1>
+            <h2 style="text-align: center; margin-bottom: 40px;">Objectif : POC bout en bout fonctionnel</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <h4>Aujourd'hui</h4>
+                    <p>Immersion</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Mercredi</h4>
+                    <p>Architecture</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Jeudi</h4>
+                    <p>Développement</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Vendredi</h4>
+                    <p>Demo MVP</p>
+                </div>
+            </div>
+            
+            <div class="demo-box" style="margin-top: 40px;">
+                <h3>Défi de la semaine</h3>
+                <p style="font-size: 1.3em;">Créer un pipeline qui :</p>
+                <ul>
+                    <li>Surveille un dossier local</li>
+                    <li>Détecte automatiquement les nouveaux PDFs</li>
+                    <li>Les vectorise dans Pinecone</li>
+                    <li>Affiche le statut dans une interface</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: Questions à Explorer -->
+        <div class="slide">
+            <div class="slide-number">11 / 12</div>
+            <h1>Questions à Explorer Ensemble</h1>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                <div class="problem-box">
+                    <h3>🤔 Défis Techniques</h3>
+                    <ul>
+                        <li>Quelle stratégie de chunking adopter ?</li>
+                        <li>Comment gérer les tableaux Excel ?</li>
+                        <li>Faut-il du preprocessing spécifique ?</li>
+                        <li>Comment optimiser les coûts API ?</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-box">
+                    <h3>💡 Opportunités</h3>
+                    <ul>
+                        <li>Fine-tuning des embeddings ?</li>
+                        <li>Recherche hybride (vectorielle + keywords) ?</li>
+                        <li>Interface no-code pour les utilisateurs ?</li>
+                        <li>Analytics sur les recherches ?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="vision-box" style="margin-top: 40px;">
+                <h3>Ta vision compte</h3>
+                <p style="font-size: 1.2em;">Quelles autres idées as-tu pour améliorer ce système ?</p>
+            </div>
+        </div>
+
+        <!-- Slide 12: Let's Go! -->
+        <div class="slide">
+            <div class="slide-number">12 / 12</div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
+                <h1 style="font-size: 5em;">Let's Build! 🚀</h1>
+                <div class="vision-box" style="margin-top: 40px; max-width: 800px;">
+                    <h2 style="font-size: 2em; margin-bottom: 30px;">Prochaines étapes</h2>
+                    <p style="font-size: 1.3em;">1. Explorer le code existant ensemble</p>
+                    <p style="font-size: 1.3em;">2. Test rapide avec agent.py</p>
+                    <p style="font-size: 1.3em;">3. Brainstorming architecture</p>
+                    <p style="font-size: 1.3em;">4. Premier commit avant midi !</p>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.6em; color: #22c55e;">
+                    Questions ? C'est le moment ! 💬
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav-buttons">
+        <button id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            
+            slides[currentSlide].classList.add('active');
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+        
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
