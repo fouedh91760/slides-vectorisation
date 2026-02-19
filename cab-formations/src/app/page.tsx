@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -106,7 +107,15 @@ const financements = [
   "Conseil Régional",
 ];
 
-const medias = ["Automoto", "France 2", "France 3", "Canal Plus", "France Bleu", "Slate", "Rue89"];
+const medias = [
+  { name: "Automoto", file: "automoto.png" },
+  { name: "France 2", file: "france2.png" },
+  { name: "France 3", file: "france3.png" },
+  { name: "Canal Plus", file: "canal.png" },
+  { name: "France Bleu", file: "france-bleu.png" },
+  { name: "Slate", file: "slate.png" },
+  { name: "Rue89", file: "rue89.png" },
+];
 
 export default function HomePage() {
   return (
@@ -328,24 +337,19 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center gap-8 items-center">
             {medias.map((m) => (
               <div
-                key={m}
-                className="bg-white rounded-lg px-6 py-4 shadow-sm text-gray-600 font-semibold text-lg"
+                key={m.name}
+                className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center"
               >
-                {m}
+                <Image src={`/images/medias/${m.file}`} alt={m.name} width={120} height={50} className="object-contain" />
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-6 py-3">
-              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="text-green-700 font-semibold">Certifié QUALIOPI</span>
+          <div className="flex flex-wrap justify-center gap-6 mt-10 items-center">
+            <div className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center">
+              <Image src="/images/certifications/qualiopi.jpg" alt="Certification QUALIOPI" width={150} height={60} className="object-contain" />
+            </div>
+            <div className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center">
+              <Image src="/images/certifications/datadock.png" alt="Certification Datadock" width={150} height={60} className="object-contain" />
             </div>
           </div>
         </div>

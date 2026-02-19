@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -64,9 +65,7 @@ export default function Header() {
       {/* Main nav */}
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-            C
-          </div>
+          <Image src="/images/logos/cab-formations.png" alt="CAB Formations - Formation VTC" width={40} height={40} className="rounded-lg" />
           <div>
             <div className="font-bold text-[var(--cab-blue)] text-lg leading-tight">
               CAB Formations

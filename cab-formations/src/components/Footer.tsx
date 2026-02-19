@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,9 +9,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-[var(--cab-gold)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-              C
-            </div>
+            <Image src="/images/logos/cab-formations.png" alt="CAB Formations - Formation VTC" width={40} height={40} className="rounded-lg" />
             <div>
               <div className="font-bold text-white text-lg">CAB Formations</div>
               <div className="text-xs text-gray-400">Leader Formation VTC</div>
