@@ -5,7 +5,7 @@ import DevisForm from "@/components/DevisForm";
 export const metadata: Metadata = {
   title: "Demande de Devis Gratuit | Formation VTC",
   description:
-    "Demandez un devis gratuit pour votre formation VTC. CAB Formations vous accompagne dans votre projet professionnel. Réponse sous 24h.",
+    "Demandez votre devis gratuit pour une formation VTC chez CAB Formations. Réponse sous 24h. Financement CPF, Pôle Emploi accepté.",
   alternates: { canonical: "https://cab-formations.fr/demande-de-devis" },
 };
 
@@ -18,15 +18,14 @@ export default function DemandeDeDevisPage() {
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-4">
             DEMANDEZ UN DEVIS GRATUIT
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Remplissez le formulaire ci-dessous et recevez votre devis personnalisé
-            sous 24h. Un conseiller CAB Formations vous contactera pour répondre à
-            toutes vos questions.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Recevez votre devis personnalisé sous 24h. Un conseiller CAB Formations
+            vous accompagne dans votre projet de formation VTC.
           </p>
         </div>
       </section>
 
-      {/* Form + Sidebar */}
+      {/* Form + Side Panel */}
       <section className="py-16 bg-[var(--cab-gray)]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-8">
@@ -39,8 +38,8 @@ export default function DemandeDeDevisPage() {
             <div className="space-y-6">
               {/* Phone */}
               <div className="card">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[var(--cab-gold)] rounded-lg flex items-center justify-center text-white shrink-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -50,22 +49,20 @@ export default function DemandeDeDevisPage() {
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--cab-blue)] mb-1">Téléphone</h3>
-                    <a
-                      href="tel:+33176380017"
-                      className="text-[var(--cab-gold)] font-semibold text-lg hover:underline"
-                    >
-                      01 76 38 00 17
-                    </a>
-                    <p className="text-sm text-gray-500 mt-1">Appel gratuit</p>
-                  </div>
+                  <h3 className="font-bold text-[var(--cab-blue)]">Téléphone</h3>
                 </div>
+                <a
+                  href="tel:+33176380017"
+                  className="text-lg font-semibold text-[var(--cab-gold)] hover:underline"
+                >
+                  01 76 38 00 17
+                </a>
+                <p className="text-sm text-gray-500 mt-1">Appel gratuit et sans engagement</p>
               </div>
 
               {/* Email */}
               <div className="card">
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -76,22 +73,20 @@ export default function DemandeDeDevisPage() {
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--cab-blue)] mb-1">Email</h3>
-                    <a
-                      href="mailto:contact@cab-formations.fr"
-                      className="text-[var(--cab-gold)] font-semibold hover:underline"
-                    >
-                      contact@cab-formations.fr
-                    </a>
-                    <p className="text-sm text-gray-500 mt-1">Réponse sous 24h</p>
-                  </div>
+                  <h3 className="font-bold text-[var(--cab-blue)]">Email</h3>
                 </div>
+                <a
+                  href="mailto:contact@cab-formations.fr"
+                  className="text-[var(--cab-gold)] font-semibold hover:underline"
+                >
+                  contact@cab-formations.fr
+                </a>
+                <p className="text-sm text-gray-500 mt-1">Réponse sous 24h</p>
               </div>
 
               {/* Address */}
               <div className="card">
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -108,21 +103,19 @@ export default function DemandeDeDevisPage() {
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--cab-blue)] mb-1">Adresse</h3>
-                    <p className="text-sm text-gray-600">
-                      151 avenue Gallieni<br />
-                      Bât C<br />
-                      93170 Bagnolet
-                    </p>
-                  </div>
+                  <h3 className="font-bold text-[var(--cab-blue)]">Adresse</h3>
                 </div>
+                <p className="text-sm text-gray-700">
+                  151 avenue Gallieni, Bât C
+                  <br />
+                  93170 Bagnolet
+                </p>
               </div>
 
               {/* Opening Hours */}
               <div className="card">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[var(--cab-gold)] rounded-lg flex items-center justify-center text-white shrink-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -132,23 +125,19 @@ export default function DemandeDeDevisPage() {
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--cab-blue)] mb-1">Horaires d&apos;ouverture</h3>
-                    <p className="text-sm text-gray-600">
-                      Lundi - Vendredi<br />
-                      9h - 18h
-                    </p>
-                  </div>
+                  <h3 className="font-bold text-[var(--cab-blue)]">Horaires d&apos;ouverture</h3>
                 </div>
+                <p className="text-sm text-gray-700">Lundi - Vendredi : 9h - 18h</p>
+                <p className="text-sm text-gray-500 mt-1">Fermé le week-end et jours fériés</p>
               </div>
 
-              {/* Quick CTA */}
-              <div className="card bg-[var(--cab-blue)] text-white text-center">
-                <h3 className="font-bold text-lg mb-2">Besoin d&apos;un conseil ?</h3>
+              {/* CTA */}
+              <div className="bg-[var(--cab-blue)] text-white rounded-xl p-6 text-center">
+                <h3 className="font-bold text-lg mb-2">Besoin d&apos;aide ?</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Nos conseillers sont disponibles pour vous accompagner dans votre projet de formation VTC.
+                  Un CAB&apos;Expert est disponible pour répondre à toutes vos questions.
                 </p>
-                <a href="tel:+33176380017" className="btn-gold w-full text-center block">
+                <a href="tel:+33176380017" className="btn-gold text-sm w-full text-center">
                   Appeler maintenant
                 </a>
               </div>
@@ -157,19 +146,23 @@ export default function DemandeDeDevisPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="hero-gradient py-16 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">
-            Pourquoi choisir CAB Formations ?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            +50 000 stagiaires formés, 12 centres en France, certifié QUALIOPI.
-            Financement possible via CPF, Pôle Emploi, paiement en 3X sans frais.
-          </p>
-          <Link href="/examen-vtc-theorique" className="btn-gold text-lg">
-            Découvrir nos formations
-          </Link>
+      {/* Reassurance */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid sm:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="text-3xl font-bold text-[var(--cab-gold)] mb-2">24h</div>
+              <p className="text-sm text-gray-600">Réponse garantie sous 24h</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[var(--cab-gold)] mb-2">100%</div>
+              <p className="text-sm text-gray-600">Devis gratuit et sans engagement</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[var(--cab-gold)] mb-2">+50 000</div>
+              <p className="text-sm text-gray-600">Stagiaires nous ont fait confiance</p>
+            </div>
+          </div>
         </div>
       </section>
     </>

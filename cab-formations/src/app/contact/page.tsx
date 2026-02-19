@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact | CAB Formations",
   description:
-    "Contactez CAB Formations par téléphone, email ou en vous rendant dans l'un de nos 12 centres. Nos conseillers sont disponibles du lundi au vendredi de 9h à 18h.",
+    "Contactez CAB Formations pour toute question sur nos formations VTC, Taxi, TPMR. Téléphone : 01 76 38 00 17. Email : contact@cab-formations.fr.",
   alternates: { canonical: "https://cab-formations.fr/contact" },
 };
 
@@ -16,21 +16,21 @@ export default function ContactPage() {
       <section className="hero-gradient text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-4">CONTACTEZ-NOUS</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Une question sur nos formations VTC ? Notre équipe est à votre disposition
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Une question sur nos formations ? Notre équipe est à votre disposition
             pour vous accompagner dans votre projet professionnel.
           </p>
         </div>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid sm:grid-cols-3 gap-6">
             {/* Phone Card */}
             <div className="card text-center">
-              <div className="w-14 h-14 bg-[var(--cab-gold)] rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-14 h-14 bg-[var(--cab-blue)] rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -39,20 +39,20 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-bold text-[var(--cab-blue)] text-lg mb-2">Téléphone</h3>
+              <h3 className="font-bold text-[var(--cab-blue)] mb-2">Téléphone</h3>
               <a
                 href="tel:+33176380017"
-                className="text-[var(--cab-gold)] font-semibold text-xl hover:underline"
+                className="text-lg font-semibold text-[var(--cab-gold)] hover:underline"
               >
                 01 76 38 00 17
               </a>
-              <p className="text-sm text-gray-500 mt-2">Lundi - Vendredi, 9h - 18h</p>
+              <p className="text-sm text-gray-500 mt-1">Lundi - Vendredi, 9h - 18h</p>
             </div>
 
             {/* Email Card */}
             <div className="card text-center">
               <div className="w-14 h-14 bg-[var(--cab-blue)] rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -61,20 +61,20 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-bold text-[var(--cab-blue)] text-lg mb-2">Email</h3>
+              <h3 className="font-bold text-[var(--cab-blue)] mb-2">Email</h3>
               <a
                 href="mailto:contact@cab-formations.fr"
-                className="text-[var(--cab-gold)] font-semibold text-lg hover:underline"
+                className="text-[var(--cab-gold)] font-semibold hover:underline"
               >
                 contact@cab-formations.fr
               </a>
-              <p className="text-sm text-gray-500 mt-2">Réponse sous 24h</p>
+              <p className="text-sm text-gray-500 mt-1">Réponse sous 24h</p>
             </div>
 
             {/* Address Card */}
             <div className="card text-center">
               <div className="w-14 h-14 bg-[var(--cab-blue)] rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -89,51 +89,62 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-bold text-[var(--cab-blue)] text-lg mb-2">Adresse</h3>
-              <p className="text-gray-600">
-                151 avenue Gallieni, Bât C<br />
+              <h3 className="font-bold text-[var(--cab-blue)] mb-2">Adresse</h3>
+              <p className="text-gray-700">
+                151 avenue Gallieni, Bât C
+                <br />
                 93170 Bagnolet
               </p>
-              <p className="text-sm text-gray-500 mt-2">Métro Gallieni (Ligne 3)</p>
+              <p className="text-sm text-gray-500 mt-1">Siège social</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Form + Map */}
+      {/* Form + Map */}
+      <section className="py-16 bg-[var(--cab-gray)]">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
+            {/* Form */}
             <div>
-              <h2 className="section-title text-left !mb-6">Envoyez-nous un message</h2>
+              <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-6">
+                Envoyez-nous un message
+              </h2>
               <ContactForm />
             </div>
 
             {/* Map Placeholder */}
             <div>
-              <h2 className="section-title text-left !mb-6">Nous trouver</h2>
+              <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-6">
+                Nous trouver
+              </h2>
               <div className="card h-[400px] lg:h-full min-h-[400px] flex items-center justify-center bg-gray-100">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[var(--cab-blue)] rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-gray-500 font-medium mb-2">Carte interactive</p>
-                  <p className="text-sm text-gray-400">
-                    151 avenue Gallieni, Bât C<br />
+                <div className="text-center text-gray-500">
+                  <svg
+                    className="w-16 h-16 mx-auto mb-4 text-gray-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <p className="font-semibold">Carte interactive</p>
+                  <p className="text-sm mt-1">
+                    151 avenue Gallieni, Bât C
+                    <br />
                     93170 Bagnolet
                   </p>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=151+avenue+Gallieni+93170+Bagnolet"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-blue mt-4 text-sm"
-                  >
-                    Ouvrir dans Google Maps
-                  </a>
                 </div>
               </div>
             </div>
@@ -144,12 +155,9 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="hero-gradient py-16 text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">
-            Prêt à démarrer votre formation VTC ?
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Besoin d&apos;un devis personnalisé ?</h2>
           <p className="text-gray-300 text-lg mb-8">
-            Demandez votre devis gratuit et personnalisé. Un conseiller vous rappelle
-            sous 24h pour répondre à toutes vos questions.
+            Obtenez votre devis gratuit et sans engagement en quelques minutes.
           </p>
           <Link href="/demande-de-devis" className="btn-gold text-lg">
             Demander un devis gratuit
