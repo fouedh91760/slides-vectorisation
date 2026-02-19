@@ -1,0 +1,144 @@
+# CAB Formations - Documentation Complète
+
+> CAB Formations est le leader de la formation VTC (Voiture de Transport avec Chauffeur) en France. Fondé en 2015, l'organisme a formé plus de 50 000 stagiaires à travers 12 centres de formation répartis sur tout le territoire français. Certifié QUALIOPI, il est noté 4.7/5 sur 1 216 avis Google.
+
+## L'Examen VTC en France
+
+Depuis 2017, l'accès à la profession de chauffeur VTC nécessite la réussite d'un examen en deux parties :
+
+### Examen Théorique (Admissibilité)
+
+L'épreuve théorique comprend 7 examens couvrant 5 matières communes VTC-Taxi et 2 matières spécifiques VTC, sous forme de QCM et QRC.
+
+**Note minimale requise : 10/20 de moyenne générale.**
+
+| Épreuve | Matière | Coefficient | Durée | Seuil d'élimination |
+|---------|---------|-------------|-------|---------------------|
+| A | Réglementation T3P et prévention des violences/discriminations | 3 | 45 min | 6/20 |
+| B | Gestion d'entreprise | 2 | 45 min | 6/20 |
+| C | Sécurité routière | 3 | 30 min | 6/20 |
+| D | Langue française | 2 | 30 min | 6/20 |
+| E | Langue anglaise (niveau A2) | 1 | 30 min | 4/20 |
+| F | Développement commercial VTC | 3 | 30 min | 6/20 |
+| G | Réglementation nationale VTC | 3 | 20 min | 6/20 |
+
+### Examen Pratique (Admission)
+
+Épreuve de conduite professionnelle évaluée par 2 examinateurs sur 20 points :
+
+- **Conduite et sécurité** : 10 points
+- **Relation client** : 5 points
+- **Construction du parcours** : 3 points
+- **Facturation et paiement** : 2 points
+
+**Note minimale requise : 12/20. 3 tentatives possibles dans les 12 mois suivant la théorie.**
+
+## Formations Proposées par CAB Formations
+
+### Formation VTC Théorique
+
+| Formule | Durée | Prix | Format |
+|---------|-------|------|--------|
+| Théorie Intensive | 35 heures (1 semaine) | 499€ | Présentiel |
+| Théorie Standard | 70 heures (2 semaines) | 1 690€ | Présentiel |
+| Théorie Complète | 105 heures (3 semaines) | 2 490€ | Présentiel |
+| Théorie E-learning | À votre rythme | 499€ | À distance |
+
+**Objectifs** : Préparer l'acquisition de la carte professionnelle VTC en préparant les épreuves théoriques. Acquisition des connaissances en droit des transports, gestion d'entreprise, sécurité routière, expression française et anglaise, développement commercial.
+
+**Certification** : RS5637 - ACTIVE, délivrée par le Ministère de la transition écologique. Expiration : 31/12/2026.
+
+### Formation VTC Pratique
+
+| Formule | Durée | Prix | Format |
+|---------|-------|------|--------|
+| Pratique présentiel | 70 heures | 159€ | Véhicule double commande |
+| Pratique E-learning | À votre rythme | 399€ | À distance 24/7 |
+
+Les formateurs sont des chauffeurs professionnels avec minimum 10 ans d'expérience.
+
+### Formation VTC Continue (Obligatoire)
+
+- **Durée** : 14 heures
+- **Prix** : 399€
+- **Fréquence** : Tous les 5 ans pour renouveler la carte professionnelle VTC
+- **Modules** : Réglementation T3P, Réglementation VTC, Sécurité routière + module au choix (Gestion et développement commercial)
+
+### Formations Taxi
+
+- **Taxi Initial** : Formation complète pour devenir chauffeur de taxi
+- **Taxi Mobilité** : Passerelle VTC vers Taxi
+
+### Formation TPMR
+
+Formation au transport de personnes à mobilité réduite : manipulation fauteuil roulant, réglementation accessibilité, assistance aux passagers.
+
+## Comment Devenir Chauffeur VTC en 2026
+
+1. **Vérifier les conditions** : Permis de conduire de plus de 3 ans, casier judiciaire vierge, aptitude médicale
+2. **S'inscrire à l'examen** : Inscription auprès de la CMA (Chambre des Métiers et de l'Artisanat)
+3. **Se former** : Suivre une formation théorique (35h à 105h) et pratique
+4. **Passer l'examen théorique** : 7 épreuves, note minimale 10/20
+5. **Passer l'examen pratique** : Conduite professionnelle, note minimale 12/20
+6. **Obtenir la carte professionnelle** : Demande en préfecture après réussite
+7. **Créer son entreprise** : Choix du statut juridique et inscription au registre VTC
+
+**Salaire moyen d'un chauffeur VTC** : 2 000€ à 4 000€ net par mois selon l'activité et la zone géographique.
+
+## Centres de Formation
+
+| Centre | Adresse | Région |
+|--------|---------|--------|
+| Bagnolet (siège) | 151, Avenue Gallieni, 93170 | Île-de-France |
+| Herblay | 5 voie de l'Olivier, 95220 | Île-de-France |
+| Villabé | 7 rue des Petits Champs, 91100 | Île-de-France |
+| Bois-d'Arcy | 9 Rue René Clair, 78390 | Île-de-France |
+| Seclin | 1153 Av. de l'Épinette, 59113 | Hauts-de-France |
+| Vénissieux | 7 Rue Eugène Hénaff, 69200 | Auvergne-Rhône-Alpes |
+| Évry | Essonne | Île-de-France |
+| Strasbourg | Alsace | Grand Est |
+| Nice | Côte d'Azur | PACA |
+| Bordeaux | Gironde | Nouvelle-Aquitaine |
+| Toulouse | Haute-Garonne | Occitanie |
+| Nantes | Loire-Atlantique | Pays de la Loire |
+
+## Financement
+
+- Paiement en 3X sans frais
+- CPF (Compte Personnel de Formation)
+- Pôle Emploi / France Travail
+- DIF (Droit Individuel à la Formation)
+- Mission Locale
+- Conseil Régional
+
+## Certifications et Qualité
+
+- **QUALIOPI** : Certifié pour les actions de formation
+- **Datadock** : Référencé
+- **Note** : 4.7/5 sur 1 216 avis Google
+- **Médias** : Couvert par Automoto, France 2, France 3, Canal Plus, France Bleu, Slate, Rue89
+
+## FAQ
+
+**Combien coûte une formation VTC ?**
+Les formations VTC chez CAB Formations vont de 499€ (théorie 35h ou e-learning) à 2 490€ (formation complète 105h). La formation pratique coûte 159€ et la formation continue 399€.
+
+**Quelle est la durée de la formation VTC ?**
+De 35 heures (1 semaine intensive) à 105 heures (3 semaines complètes) pour la théorie. 70 heures pour la pratique. 14 heures pour la formation continue.
+
+**Comment financer sa formation VTC ?**
+Via le CPF, Pôle Emploi/France Travail, le DIF, la Mission Locale ou le Conseil Régional. CAB Formations propose aussi le paiement en 3X sans frais.
+
+**La formation continue est-elle obligatoire ?**
+Oui, une formation continue de 14 heures est obligatoire tous les 5 ans pour conserver sa carte professionnelle VTC.
+
+**Combien gagne un chauffeur VTC ?**
+Le salaire moyen d'un chauffeur VTC se situe entre 2 000€ et 4 000€ net par mois, selon la zone géographique, le volume d'activité et le statut juridique choisi.
+
+## Contact
+
+- **Téléphone** : 01 76 38 00 17
+- **Email** : contact@cab-formations.fr
+- **Siège social** : 151, avenue Gallieni, Bât C, 93170 Bagnolet, France
+- **Horaires** : Lundi - Vendredi, 9h - 18h
+- **Site web** : https://cab-formations.fr
