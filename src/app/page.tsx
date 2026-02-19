@@ -1,376 +1,228 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StepTabs from "@/components/StepTabs";
 
 export const metadata: Metadata = {
   title: "Formation VTC | CAB Formations : Leader de la Formation VTC",
   description:
-    "CAB Formations, leader de la formation VTC en France depuis 2015. Préparez votre examen VTC théorique et pratique. 12 centres, +50 000 stagiaires formés, certifié QUALIOPI. À partir de 499€.",
+    "Formation VTC agréée. Obtenez votre carte professionnelle VTC en passant l'examen VTC et devenez chauffeur VTC. Formation VTC en cours du jour ou cours du soir ainsi qu'à distance.",
   alternates: { canonical: "https://cab-formations.fr" },
   openGraph: {
     title: "Formation VTC | CAB Formations : Leader de la Formation VTC",
     description:
-      "Préparez votre examen VTC avec le leader français. 12 centres, +50 000 stagiaires, certifié QUALIOPI.",
+      "Formation VTC agréée. Obtenez votre carte professionnelle VTC avec CAB Formations.",
     url: "https://cab-formations.fr",
   },
 };
 
-const steps = [
-  {
-    num: "1",
-    title: "JE VEUX M'INSCRIRE À L'EXAMEN VTC",
-    desc: "Préparez votre dossier : CNI, permis de conduire (+3 ans), justificatif de domicile, photo d'identité.",
-  },
-  {
-    num: "2",
-    title: "JE PASSE L'EXAMEN VTC THÉORIQUE",
-    desc: "7 épreuves théoriques en tronc commun avec l'examen Taxi. Note minimale : 10/20.",
-  },
-  {
-    num: "3",
-    title: "JE PASSE L'EXAMEN VTC PRATIQUE",
-    desc: "Épreuve de conduite professionnelle avec 2 examinateurs. Note minimale : 12/20.",
-  },
-  {
-    num: "4",
-    title: "J'AI RÉUSSI MON EXAMEN",
-    desc: "Obtenez votre carte professionnelle VTC et créez votre entreprise.",
-  },
-];
-
 const formations = [
-  {
-    title: "Formation VTC Théorique en Classe",
-    duration: "35 heures",
-    price: "499",
-    desc: "Formation intensive sur 1 semaine pour préparer les 7 épreuves de l'examen théorique VTC.",
-    href: "/examen-vtc-theorique",
-    popular: false,
-  },
-  {
-    title: "Formation VTC Théorique en Classe",
-    duration: "70 heures",
-    price: "1 690",
-    desc: "Formation complète sur 2 semaines avec approfondissement de toutes les matières de l'examen VTC.",
-    href: "/examen-vtc-theorique",
-    popular: true,
-  },
-  {
-    title: "Formation VTC Théorique en Classe",
-    duration: "105 heures",
-    price: "2 490",
-    desc: "Formation premium sur 3 semaines avec accompagnement personnalisé et examens blancs.",
-    href: "/examen-vtc-theorique",
-    popular: false,
-  },
-  {
-    title: "Formation VTC Théorique E-learning",
-    duration: "À votre rythme",
-    price: "499",
-    desc: "Accès 24/7 à la plateforme e-learning avec cours vidéo, QCM et examens blancs.",
-    href: "/examen-vtc-theorique",
-    popular: false,
-  },
-  {
-    title: "Formation VTC Pratique",
-    duration: "70 heures",
-    price: "159",
-    desc: "Préparation à l'épreuve pratique avec véhicule double commande et formateurs expérimentés.",
-    href: "/examen-vtc-pratique",
-    popular: false,
-  },
-  {
-    title: "Formation VTC Continue",
-    duration: "14 heures",
-    price: "399",
-    desc: "Formation obligatoire tous les 5 ans pour renouveler votre carte professionnelle VTC.",
-    href: "/formation-vtc-continue-obligatoire",
-    popular: false,
-  },
+  { title: "Théorie 1 Semaine", duration: "35h", price: "499", image: "/images/formations/th1.png", href: "/class/theorie-1-semaine" },
+  { title: "Théorie 2 Semaines", duration: "70h", price: "1 690", image: "/images/formations/th2.png", href: "/class/theorie-2-semaines" },
+  { title: "Formation Complète", duration: "105h", price: "2 490", image: "/images/formations/th3.png", href: "/class/formation-complete" },
+  { title: "Formation Pratique VTC", duration: "70h", price: "159", image: "/images/formations/pr.png", href: "/class/formation-pratique-vtc" },
+  { title: "E-Learning Complet", duration: "À votre rythme", price: "", image: "/images/formations/ecomplet.png", href: "/class/e-learning-complet" },
+  { title: "Formation Continue", duration: "14h", price: "399", image: "/images/formations/fcontinue.png", href: "/class/formation-continue" },
 ];
 
-const centres = [
-  { ville: "Bagnolet", adresse: "151, Avenue Gallieni, 93170" },
-  { ville: "Herblay", adresse: "5 voie de l'Olivier, 95220" },
-  { ville: "Villabé", adresse: "7 rue des Petits Champs, 91100" },
-  { ville: "Bois-d'Arcy", adresse: "9 Rue René Clair, 78390" },
-  { ville: "Seclin (Lille)", adresse: "1153 Av. de l'Épinette, 59113" },
-  { ville: "Vénissieux (Lyon)", adresse: "7 Rue Eugène Hénaff, 69200" },
+const medias = [
+  { name: "Automoto", file: "automoto.png", url: "https://www.auto-moto.com/dossier/cab-formations-methode-reussir-examen-vtc-154356.html" },
+  { name: "France 2", file: "france2.png", url: "https://www.francetvinfo.fr" },
+  { name: "France 3", file: "france3.png", url: "https://www.francetvinfo.fr" },
+  { name: "Canal Plus", file: "canal.png", url: "https://www.canalplus.com" },
+  { name: "France Bleu", file: "france-bleu.png", url: "https://www.francebleu.fr" },
+  { name: "Slate", file: "slate.png", url: "http://www.slate.fr/story/117807/uber-banlieue" },
+  { name: "Rue89", file: "rue89.png", url: "https://www.nouvelobs.com/rue89" },
 ];
 
 const financements = [
   "Règlement en 3X sans frais",
   "Pôle Emploi",
-  "CPF (Compte Personnel de Formation)",
-  "DIF (Droit Individuel à la Formation)",
+  "DIF",
+  "CPF",
   "Mission Locale",
   "Conseil Régional",
-];
-
-const medias = [
-  { name: "Automoto", file: "automoto.png" },
-  { name: "France 2", file: "france2.png" },
-  { name: "France 3", file: "france3.png" },
-  { name: "Canal Plus", file: "canal.png" },
-  { name: "France Bleu", file: "france-bleu.png" },
-  { name: "Slate", file: "slate.png" },
-  { name: "Rue89", file: "rue89.png" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* JSON-LD for courses */}
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ItemList",
-            itemListElement: formations.map((f, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              item: {
-                "@type": "Course",
-                name: f.title,
-                description: f.desc,
-                provider: {
-                  "@type": "Organization",
-                  name: "CAB Formations",
-                  url: "https://cab-formations.fr",
-                },
-                offers: {
-                  "@type": "Offer",
-                  price: f.price.replace(/\s/g, ""),
-                  priceCurrency: "EUR",
-                  availability: "https://schema.org/InStock",
-                },
-              },
-            })),
+            "@type": "Organization",
+            url: "https://cab-formations.fr/",
+            logo: "https://cab-formations.fr/sites/default/files/CAB-formations.png",
+            sameAs: [
+              "https://www.facebook.com/cabformations.fr/",
+              "https://fr.linkedin.com/company/cabformations",
+              "https://www.youtube.com/channel/UCf3-UsEY-ulxXTXr0MIljWg",
+              "https://www.instagram.com/cab_formations/",
+            ],
           }),
         }}
       />
 
-      {/* Hero */}
-      <section className="hero-gradient text-white py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-extrabold mb-6">FORMATION VTC</h1>
-          <p className="text-xl lg:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto">
-            Leader de la Formation VTC en France depuis 2015
-          </p>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            +50 000 stagiaires formés | 12 centres en France | Certifié QUALIOPI | Note 4.7/5
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/demande-de-devis" className="btn-gold text-lg">
-              Demandez un devis gratuit
-            </Link>
-            <Link href="/examen-vtc-theorique" className="btn-blue text-lg border border-white/20">
-              Découvrir nos formations
-            </Link>
-          </div>
-        </div>
+      {/* Hero / Slideshow with Steps */}
+      <section className="w-full">
+        <StepTabs />
       </section>
 
-      {/* Stats */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="stat-number">12</div>
-            <div className="text-sm text-gray-600 font-medium">Centres de formation</div>
-          </div>
-          <div>
-            <div className="stat-number">+50K</div>
-            <div className="text-sm text-gray-600 font-medium">Stagiaires formés</div>
-          </div>
-          <div>
-            <div className="stat-number">4.7/5</div>
-            <div className="text-sm text-gray-600 font-medium">Note moyenne (1216 avis)</div>
-          </div>
-          <div>
-            <div className="stat-number">2015</div>
-            <div className="text-sm text-gray-600 font-medium">Année de création</div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 Steps */}
-      <section className="py-20 bg-[var(--cab-gray)]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Comment devenir chauffeur VTC ?</h2>
-          <p className="section-subtitle">
-            Depuis 2017, l&apos;accès à la profession de chauffeur VTC nécessite la réussite d&apos;un
-            examen composé de deux épreuves : théorique et pratique.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((step) => (
-              <div key={step.num} className="card text-center">
-                <div className="w-12 h-12 bg-[var(--cab-gold)] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {step.num}
-                </div>
-                <h3 className="font-bold text-[var(--cab-blue)] mb-3 text-sm">{step.title}</h3>
-                <p className="text-sm text-gray-600">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Formations / Pricing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Nos formations VTC</h2>
-          <p className="section-subtitle">
-            Des formations VTC en classe, à distance ou en mixte, adaptées à votre rythme et votre
-            budget. Financement possible via Pôle Emploi, CPF, DIF.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {formations.map((f, i) => (
-              <div
-                key={i}
-                className={`card relative ${f.popular ? "border-2 border-[var(--cab-gold)]" : "border border-gray-100"}`}
-              >
-                {f.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--cab-gold)] text-white text-xs font-bold px-4 py-1 rounded-full">
-                    POPULAIRE
-                  </div>
-                )}
-                <h3 className="font-bold text-[var(--cab-blue)] mb-1">{f.title}</h3>
-                <div className="text-sm text-gray-500 mb-3">{f.duration}</div>
-                <div className="price-tag mb-3">{f.price}€</div>
-                <p className="text-sm text-gray-600 mb-4">{f.desc}</p>
-                <Link href={f.href} className="btn-gold text-sm w-full text-center">
-                  En savoir plus
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Centres */}
-      <section className="py-20 bg-[var(--cab-gray)]">
+      {/* Réseau de centres */}
+      <section className="py-16" id="reseau">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title">
             Un réseau de centres de formation VTC agréés partout en France
           </h2>
-          <p className="section-subtitle">
-            Retrouvez nos 12 centres de formation VTC à Paris, Lyon, Lille, Bordeaux, Toulouse,
-            Strasbourg, Nantes et dans toute la France.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {centres.map((c) => (
-              <div key={c.ville} className="card flex items-start gap-3">
-                <div className="w-10 h-10 bg-[var(--cab-blue)] rounded-lg flex items-center justify-center text-white shrink-0">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+          <div className="grid lg:grid-cols-2 gap-10 items-center mt-10">
+            <div className="text-center lg:text-left">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-6">
+                <div>
+                  <div className="stat-number">12</div>
+                  <div className="text-sm text-gray-500 font-medium uppercase">Centres de formation</div>
                 </div>
                 <div>
-                  <div className="font-bold text-[var(--cab-blue)]">{c.ville}</div>
-                  <div className="text-sm text-gray-500">{c.adresse}</div>
+                  <div className="stat-number">+ de 50K</div>
+                  <div className="text-sm text-gray-500 font-medium uppercase">Stagiaires formés</div>
                 </div>
               </div>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                CAB formations est un acteur incontournable de la formation VTC. Nous disposons de
+                centres de formation VTC à Paris, Bordeaux, Lille, Toulouse, Strasbourg, Nantes, Lyon
+                et proposons également notre plateforme de e-learning.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                <Link href="/centres-de-formation" className="btn-primary text-sm">
+                  Trouver un centre
+                </Link>
+                <Link href="/examen-vtc-theorique" className="btn-outline-primary text-sm">
+                  Découvrir le e-learning
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/backgrounds/map.gif"
+                alt="Carte des centres de formation VTC en France"
+                width={480}
+                height={480}
+                className="max-w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Formations / Prix */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="section-title">Formation VTC Les Prix</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+            {formations.map((f, i) => (
+              <Link key={i} href={f.href} className="formation-card group block">
+                <Image
+                  src={f.image}
+                  alt={f.title}
+                  width={400}
+                  height={200}
+                  className="formation-img group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="formation-body text-center">
+                  <h3 className="font-bold text-[var(--cab-dark)] mb-1">{f.title}</h3>
+                  <div className="text-sm text-gray-500 mb-1">{f.duration}</div>
+                  {f.price && <div className="price-tag">{f.price}€</div>}
+                </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/centres-de-formation" className="btn-blue">
-              Voir tous nos centres
+            <Link href="/demande-de-devis" className="btn-primary text-base">
+              DEVIS GRATUIT
             </Link>
           </div>
         </div>
       </section>
 
       {/* Financement */}
-      <section className="py-20 bg-white">
+      <section className="py-16 financement-bg">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title">Les aides au financement</h2>
-          <p className="section-subtitle">
-            Plusieurs solutions de financement existent pour votre formation VTC. Contactez
-            gratuitement un CAB&apos;Expert au{" "}
-            <a href="tel:+33176380017" className="text-[var(--cab-gold)] font-semibold">
-              01 76 38 00 17
-            </a>
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {financements.map((f) => (
-              <div key={f} className="flex items-center gap-3 bg-[var(--cab-gray)] rounded-lg p-4">
-                <svg
-                  className="w-5 h-5 text-green-500 shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-sm font-medium">{f}</span>
-              </div>
-            ))}
+          <div className="max-w-3xl mx-auto mt-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {financements.map((f) => (
+                <div key={f} className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm border border-[var(--cab-border)]">
+                  <svg className="w-5 h-5 text-[var(--cab-green)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm font-medium text-[var(--cab-dark)]">{f}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center mt-8">
+              <Link href="/blog/financer-sa-formation-vtc" className="btn-primary text-sm">
+                Plus d&apos;informations
+              </Link>
+              <Link href="/demande-de-devis" className="btn-primary text-sm">
+                Demander un devis
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quality / Media */}
-      <section className="py-20 bg-[var(--cab-gray)]">
+      {/* Démarche Qualité */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Ils parlent de nous</h2>
+          <h2 className="section-title">Démarche Qualité</h2>
           <p className="section-subtitle">
-            CAB Formations s&apos;engage dans une démarche qualité et est certifié QUALIOPI. Notre
-            expertise est reconnue par les médias nationaux.
+            Actions de formations et Centre d&apos;apprentissage
           </p>
           <div className="flex flex-wrap justify-center gap-8 items-center">
-            {medias.map((m) => (
-              <div
-                key={m.name}
-                className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center"
-              >
-                <Image src={`/images/medias/${m.file}`} alt={m.name} width={120} height={50} className="object-contain" />
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 mt-10 items-center">
-            <div className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center">
-              <Image src="/images/certifications/qualiopi.jpg" alt="Certification QUALIOPI" width={150} height={60} className="object-contain" />
+            <div className="bg-[var(--cab-bg)] rounded-lg px-8 py-6 border border-[var(--cab-border)]">
+              <Image src="/images/certifications/qualiopi-2024.jpg" alt="Certification QUALIOPI" width={180} height={80} className="object-contain" />
             </div>
-            <div className="bg-white rounded-lg px-6 py-4 shadow-sm flex items-center justify-center">
-              <Image src="/images/certifications/datadock.png" alt="Certification Datadock" width={150} height={60} className="object-contain" />
+            <div className="bg-[var(--cab-bg)] rounded-lg px-8 py-6 border border-[var(--cab-border)]">
+              <Image src="/images/certifications/datadock-original.png" alt="Certification Datadock" width={180} height={80} className="object-contain" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="hero-gradient py-20 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Prêt à devenir chauffeur VTC ?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Rejoignez les +50 000 stagiaires qui nous ont fait confiance. Demandez votre devis
-            gratuit et commencez votre formation dès maintenant.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/demande-de-devis" className="btn-gold text-lg">
-              Demander un devis gratuit
-            </Link>
-            <a href="tel:+33176380017" className="btn-blue text-lg border border-white/20">
-              Appeler le 01 76 38 00 17
+      {/* Médias */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="section-title">Ils parlent de nous</h2>
+          <div className="flex flex-wrap justify-center gap-5 items-center mt-8">
+            {medias.map((m) => (
+              <a
+                key={m.name}
+                href={m.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg px-5 py-3 border border-[var(--cab-border)] hover:shadow-md transition-shadow"
+              >
+                <Image src={`/images/medias/${m.file}`} alt={m.name} width={100} height={40} className="object-contain" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Réseaux sociaux */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="section-title">Plus d&apos;actu ? Suivez-nous !</h2>
+          <div className="flex justify-center gap-4 mt-6">
+            <a href="https://www.facebook.com/cabformations.fr/" target="_blank" rel="noopener noreferrer"
+              className="w-12 h-12 bg-[#3b5998] hover:bg-[#2d4373] rounded-full flex items-center justify-center text-white transition-all hover:scale-110">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            </a>
+            <a href="https://twitter.com/cabformations/" target="_blank" rel="noopener noreferrer"
+              className="w-12 h-12 bg-[#1da1f2] hover:bg-[#1a91da] rounded-full flex items-center justify-center text-white transition-all hover:scale-110">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" /></svg>
             </a>
           </div>
         </div>
