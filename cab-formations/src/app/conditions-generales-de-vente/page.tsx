@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Conditions Générales de Vente",
   description:
-    "Conditions Générales de Vente de CAB Formations. Inscription, tarifs, paiement, rétractation, annulation et responsabilité.",
+    "Conditions générales de vente de CAB Formations. Inscription, tarifs, paiement, rétractation, annulation et responsabilité.",
   alternates: { canonical: "https://cab-formations.fr/conditions-generales-de-vente" },
 };
 
@@ -12,293 +12,295 @@ export default function ConditionsGeneralesDeVentePage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-gradient text-white py-16 lg:py-20">
+      <section className="hero-gradient text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-4">
             CONDITIONS GÉNÉRALES DE VENTE
           </h1>
-          <p className="text-lg text-gray-300">
-            Applicables à l&apos;ensemble des formations proposées par CAB Formations.
+          <p className="text-xl text-gray-300">
+            Applicables à l&apos;ensemble des prestations de formation proposées par CAB Formations.
           </p>
         </div>
       </section>
 
       {/* Content */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 space-y-12">
+        <div className="max-w-4xl mx-auto px-4 space-y-10">
           {/* Préambule */}
           <div>
             <div className="card bg-[var(--cab-gray)]">
-              <p className="text-gray-600 leading-relaxed">
-                Les présentes Conditions Générales de Vente (CGV) s&apos;appliquent à
-                toutes les prestations de formation conclues par <strong>CAB Formations</strong>,
-                SAS au capital de [À compléter], dont le siège social est situé au
-                151 avenue Gallieni, Bât C, 93170 Bagnolet, immatriculée au RCS de
-                Bobigny sous le numéro [À compléter], numéro de déclaration
-                d&apos;activité : [À compléter].
-              </p>
-              <p className="text-gray-600 leading-relaxed mt-3">
-                Toute inscription à une formation implique l&apos;acceptation sans
-                réserve des présentes CGV par le stagiaire ou le commanditaire de
-                la formation.
+              <p className="text-gray-700 leading-relaxed text-sm">
+                <strong>Dernière mise à jour :</strong> Février 2026
+                <br />
+                Les présentes Conditions Générales de Vente (ci-après « CGV ») s&apos;appliquent
+                à toutes les prestations de formation conclues par CAB Formations, dont le
+                siège social est situé au 151 avenue Gallieni, Bât C, 93170 Bagnolet, auprès
+                de ses clients, qu&apos;ils soient particuliers ou professionnels.
               </p>
             </div>
           </div>
 
-          {/* Article 1 - Objet */}
+          {/* Article 1 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 1 - Objet
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Les présentes CGV ont pour objet de définir les conditions dans
-                lesquelles CAB Formations propose et fournit des prestations de
-                formation professionnelle continue aux stagiaires, qu&apos;ils soient
-                des particuliers ou des entreprises.
+              <p className="text-gray-700 leading-relaxed">
+                Les présentes CGV ont pour objet de définir les conditions dans lesquelles
+                CAB Formations fournit des prestations de formation professionnelle à ses
+                clients. Elles s&apos;appliquent à l&apos;ensemble des formations proposées par
+                CAB Formations, qu&apos;elles soient dispensées en présentiel, en e-learning ou
+                en format mixte.
               </p>
-              <p className="text-gray-600 leading-relaxed">
-                Les formations proposées par CAB Formations comprennent notamment :
-                les formations VTC théoriques (35h, 70h, 105h), les formations VTC
-                e-learning, les formations VTC pratiques, les formations continues
-                obligatoires (14h), les formations Taxi et les formations TPMR.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                Toute inscription à une formation implique l&apos;acceptation sans réserve des
+                présentes CGV par le client. CAB Formations se réserve le droit de modifier
+                les présentes CGV à tout moment. Les CGV applicables sont celles en vigueur
+                à la date de l&apos;inscription.
               </p>
             </div>
           </div>
 
-          {/* Article 2 - Inscription */}
+          {/* Article 2 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 2 - Inscription
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                L&apos;inscription à une formation s&apos;effectue par la signature
-                d&apos;un contrat ou d&apos;une convention de formation accompagnée
-                du règlement total ou partiel de la formation, ou de la validation
-                d&apos;un dossier de prise en charge par un organisme financeur (CPF,
-                Pôle Emploi, OPCO, etc.).
+              <p className="text-gray-700 leading-relaxed">
+                L&apos;inscription à une formation est effective après réception par CAB Formations
+                du dossier complet comprenant :
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                L&apos;inscription est considérée comme définitive à réception :
-              </p>
-              <ul className="space-y-2 text-gray-600 mb-4">
+              <ul className="mt-3 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Du contrat ou de la convention de formation signée</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Le bulletin d&apos;inscription dûment complété et signé
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Du règlement ou de l&apos;accord de prise en charge</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Une copie de la pièce d&apos;identité en cours de validité
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Des pièces justificatives requises (CNI, permis de conduire, etc.)</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Une copie du permis de conduire (catégorie B, obtenu depuis plus de 3 ans)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Le règlement de l&apos;acompte ou la totalité du montant de la formation
                 </li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">
-                CAB Formations se réserve le droit de refuser une inscription en cas
-                de dossier incomplet ou de places insuffisantes dans la session choisie.
-                Dans ce cas, le stagiaire sera orienté vers une autre session disponible.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                CAB Formations confirmera l&apos;inscription par email dans un délai de 48 heures
+                ouvrées suivant la réception du dossier complet. L&apos;inscription est nominative
+                et ne peut être cédée à un tiers sans l&apos;accord écrit de CAB Formations.
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                En cas de dossier incomplet, CAB Formations se réserve le droit de reporter
+                l&apos;inscription jusqu&apos;à réception des pièces manquantes.
               </p>
             </div>
           </div>
 
-          {/* Article 3 - Tarifs et paiement */}
+          {/* Article 3 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 3 - Tarifs et paiement
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Les tarifs des formations sont indiqués en euros TTC sur le site
-                cab-formations.fr et dans les programmes de formation. Ils sont
-                susceptibles de modification à tout moment, sans préavis. Le tarif
-                applicable est celui en vigueur au moment de l&apos;inscription.
+              <p className="text-gray-700 leading-relaxed">
+                Les tarifs des formations sont indiqués en euros TTC sur le site internet
+                de CAB Formations et dans les documents commerciaux. Les tarifs sont ceux
+                en vigueur au jour de l&apos;inscription.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>Modes de paiement acceptés :</strong>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                <strong>Modalités de paiement acceptées :</strong>
               </p>
-              <ul className="space-y-2 text-gray-600 mb-4">
+              <ul className="mt-2 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Carte bancaire</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Paiement comptant par carte bancaire, virement ou chèque
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Virement bancaire</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Paiement en 3 fois sans frais (sous réserve d&apos;acceptation du dossier)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Paiement en 3 fois sans frais</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Financement via le CPF (Compte Personnel de Formation)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>CPF (Compte Personnel de Formation)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>Pôle Emploi (France Travail)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>OPCO et autres organismes de financement</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Prise en charge par Pôle Emploi, la Mission Locale ou le Conseil Régional
                 </li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">
-                En cas de paiement par un organisme tiers, le stagiaire reste
-                solidairement responsable du règlement en cas de défaillance de
-                l&apos;organisme financeur.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                En cas de financement par un organisme tiers (Pôle Emploi, CPF, OPCO, etc.),
+                le client reste redevable du montant de la formation en cas de non-prise en
+                charge totale ou partielle.
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                Tout retard de paiement entraînera l&apos;application de pénalités de retard
+                calculées au taux d&apos;intérêt légal majoré de 3 points, ainsi qu&apos;une indemnité
+                forfaitaire de 40€ pour frais de recouvrement, conformément aux articles
+                L.441-10 et D.441-5 du Code de commerce.
               </p>
             </div>
           </div>
 
-          {/* Article 4 - Rétractation */}
+          {/* Article 4 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 4 - Droit de rétractation
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Conformément aux articles L.221-18 et suivants du Code de la
-                consommation, le stagiaire (personne physique) dispose d&apos;un
-                délai de <strong>14 jours calendaires</strong> à compter de la
-                signature du contrat de formation pour exercer son droit de
-                rétractation, sans avoir à justifier de motifs ni à payer de
-                pénalités.
+              <p className="text-gray-700 leading-relaxed">
+                Conformément aux articles L.221-18 et suivants du Code de la consommation,
+                le client particulier dispose d&apos;un délai de 14 jours calendaires à compter
+                de la signature du contrat de formation pour exercer son droit de rétractation,
+                sans avoir à justifier de motifs ni à payer de pénalités.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Ce droit de rétractation s&apos;exerce par lettre recommandée avec
-                accusé de réception adressée à :
+              <p className="text-gray-700 leading-relaxed mt-3">
+                Pour exercer ce droit, le client doit adresser à CAB Formations une déclaration
+                écrite (courrier recommandé avec accusé de réception ou email) exprimant
+                clairement sa volonté de se rétracter, à l&apos;adresse suivante :
               </p>
-              <div className="bg-[var(--cab-gray)] rounded-lg p-4 mb-4">
-                <p className="text-gray-600 text-sm">
-                  CAB Formations<br />
-                  151 avenue Gallieni, Bât C<br />
-                  93170 Bagnolet<br />
-                  Ou par email : contact@cab-formations.fr
+              <div className="mt-3 bg-[var(--cab-gray)] rounded-lg p-4">
+                <p className="text-gray-700 text-sm">
+                  CAB Formations
+                  <br />
+                  151 avenue Gallieni, Bât C
+                  <br />
+                  93170 Bagnolet
+                  <br />
+                  Email : contact@cab-formations.fr
                 </p>
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                En cas de rétractation, CAB Formations procédera au remboursement
-                intégral des sommes versées dans un délai de 30 jours à compter
-                de la réception de la demande.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                En cas de rétractation, CAB Formations remboursera l&apos;intégralité des sommes
+                versées dans un délai maximum de 14 jours à compter de la réception de la
+                demande de rétractation.
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                <strong>Attention :</strong> si la formation a débuté avant l&apos;expiration du délai
+                de rétractation, avec l&apos;accord exprès du client, le montant correspondant aux
+                prestations déjà exécutées sera déduit du remboursement, au prorata du prix
+                total de la formation.
               </p>
             </div>
           </div>
 
-          {/* Article 5 - Annulation */}
+          {/* Article 5 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 5 - Annulation et report
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>Annulation par le stagiaire :</strong>
+              <p className="text-gray-700 leading-relaxed">
+                <strong>Annulation par le client :</strong>
               </p>
-              <ul className="space-y-2 text-gray-600 mb-4">
+              <ul className="mt-2 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>
-                    Annulation plus de 15 jours avant le début de la formation :
-                    remboursement intégral des sommes versées.
-                  </span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Plus de 15 jours avant le début de la formation : remboursement intégral
+                  ou report sans frais
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>
-                    Annulation entre 7 et 15 jours avant le début : remboursement de
-                    50% des sommes versées ou report gratuit sur une autre session.
-                  </span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Entre 7 et 15 jours avant : 50% du montant sera retenu à titre d&apos;indemnité
+                  forfaitaire, ou possibilité de report avec frais de 100€
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>
-                    Annulation moins de 7 jours avant le début : aucun remboursement.
-                    Report possible moyennant des frais de gestion de 50€.
-                  </span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Moins de 7 jours avant ou absence non justifiée : aucun remboursement
                 </li>
               </ul>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-700 leading-relaxed mt-4">
                 <strong>Annulation par CAB Formations :</strong>
               </p>
-              <p className="text-gray-600 leading-relaxed">
-                CAB Formations se réserve le droit d&apos;annuler ou de reporter une
-                session de formation en cas de force majeure, d&apos;effectif
-                insuffisant ou de circonstances exceptionnelles. Dans ce cas, le
-                stagiaire sera proposé un report sur la prochaine session
-                disponible ou le remboursement intégral des sommes versées.
+              <p className="text-gray-700 leading-relaxed mt-2">
+                CAB Formations se réserve le droit d&apos;annuler ou de reporter une session de
+                formation en cas de nombre insuffisant de participants, de force majeure ou
+                de tout événement empêchant le bon déroulement de la formation. Dans ce cas,
+                le client sera informé dans les meilleurs délais et pourra opter pour un
+                remboursement intégral ou un report sur une prochaine session.
               </p>
             </div>
           </div>
 
-          {/* Article 6 - Responsabilité */}
+          {/* Article 6 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
               Article 6 - Responsabilité
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                CAB Formations s&apos;engage à dispenser les formations avec le soin
-                et la diligence nécessaires, en mettant en oeuvre les moyens
-                pédagogiques et techniques adaptés. L&apos;obligation de CAB
-                Formations est une <strong>obligation de moyens</strong> et non de
-                résultat.
+              <p className="text-gray-700 leading-relaxed">
+                CAB Formations s&apos;engage à mettre en oeuvre tous les moyens nécessaires pour
+                assurer la qualité de ses formations conformément aux référentiels en vigueur
+                et aux exigences de la certification QUALIOPI.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                CAB Formations ne saurait être tenue responsable :
+              <p className="text-gray-700 leading-relaxed mt-3">
+                Toutefois, CAB Formations ne saurait être tenu responsable :
               </p>
-              <ul className="space-y-2 text-gray-600 mb-4">
+              <ul className="mt-2 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>De l&apos;échec du stagiaire à l&apos;examen VTC</span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  De l&apos;échec du stagiaire à l&apos;examen VTC, la réussite dépendant également
+                  de l&apos;investissement personnel du candidat
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>
-                    De toute modification des conditions d&apos;examen par les
-                    autorités compétentes (CMA)
-                  </span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Des modifications des conditions d&apos;examen décidées par les autorités
+                  compétentes (CMA)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--cab-gold)] font-bold">-</span>
-                  <span>
-                    Des dommages indirects résultant de la formation ou de son
-                    absence
-                  </span>
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Des dysfonctionnements techniques indépendants de sa volonté (pannes
+                  informatiques, coupures internet) pour les formations en e-learning
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[var(--cab-gold)] font-bold mt-0.5">&#8226;</span>
+                  Des dommages indirects pouvant résulter de la participation à une formation
                 </li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">
-                Le stagiaire s&apos;engage à respecter le règlement intérieur du
-                centre de formation, à suivre la formation avec assiduité et à
-                adopter un comportement respectueux envers les formateurs et les
-                autres stagiaires.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                La responsabilité de CAB Formations est limitée au montant de la formation
+                concernée.
               </p>
             </div>
           </div>
 
-          {/* Article 7 - Litiges */}
+          {/* Article 7 */}
           <div>
             <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
-              Article 7 - Litiges et médiation
+              Article 7 - Règlement intérieur
             </h2>
             <div className="card">
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Les présentes CGV sont soumises au droit français. En cas de
-                différend relatif à l&apos;interprétation ou à l&apos;exécution des
-                présentes CGV, les parties s&apos;engagent à rechercher une solution
-                amiable avant toute action judiciaire.
+              <p className="text-gray-700 leading-relaxed">
+                Tout stagiaire s&apos;engage à respecter le règlement intérieur de CAB Formations
+                qui lui est remis lors de son inscription. Le non-respect de ce règlement
+                pourra entraîner l&apos;exclusion du stagiaire sans remboursement.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Conformément à l&apos;article L.612-1 du Code de la consommation,
-                le stagiaire peut recourir gratuitement à un médiateur de la
-                consommation en cas de litige non résolu. Les coordonnées du
-                médiateur compétent sont disponibles sur demande auprès de CAB
-                Formations.
+            </div>
+          </div>
+
+          {/* Article 8 */}
+          <div>
+            <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
+              Article 8 - Litiges et droit applicable
+            </h2>
+            <div className="card">
+              <p className="text-gray-700 leading-relaxed">
+                Les présentes CGV sont soumises au droit français. En cas de litige relatif
+                à l&apos;interprétation ou à l&apos;exécution des présentes, les parties s&apos;engagent
+                à rechercher une solution amiable avant toute action judiciaire.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Le stagiaire peut également déposer sa réclamation sur la
-                plateforme européenne de résolution des litiges en ligne :{" "}
+              <p className="text-gray-700 leading-relaxed mt-3">
+                Conformément aux dispositions du Code de la consommation, le client peut
+                recourir gratuitement au service de médiation de la consommation. Le médiateur
+                compétent est : [A compléter]. Vous pouvez également accéder à la plateforme
+                de règlement en ligne des litiges de la Commission européenne à l&apos;adresse
+                suivante :{" "}
                 <a
                   href="https://ec.europa.eu/consumers/odr"
                   target="_blank"
@@ -308,27 +310,48 @@ export default function ConditionsGeneralesDeVentePage() {
                   https://ec.europa.eu/consumers/odr
                 </a>
               </p>
-              <p className="text-gray-600 leading-relaxed">
-                À défaut de résolution amiable, tout litige sera soumis à la
-                compétence exclusive des tribunaux du ressort de la Cour
-                d&apos;appel de Paris.
+              <p className="text-gray-700 leading-relaxed mt-3">
+                À défaut de résolution amiable, tout litige sera soumis à la compétence
+                exclusive des tribunaux du ressort du siège social de CAB Formations.
               </p>
             </div>
           </div>
 
-          {/* Date de mise à jour */}
-          <div className="text-center pt-8 border-t border-gray-200">
-            <p className="text-sm text-gray-500">
-              Dernière mise à jour : Février 2026
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-              <Link href="/mentions-legales" className="text-[var(--cab-gold)] hover:underline text-sm font-medium">
-                Mentions Légales
-              </Link>
-              <Link href="/politique-de-confidentialite" className="text-[var(--cab-gold)] hover:underline text-sm font-medium">
-                Politique de Confidentialité
-              </Link>
+          {/* Article 9 */}
+          <div>
+            <h2 className="text-2xl font-bold text-[var(--cab-blue)] mb-4">
+              Article 9 - Protection des données personnelles
+            </h2>
+            <div className="card">
+              <p className="text-gray-700 leading-relaxed">
+                Les données personnelles collectées lors de l&apos;inscription sont traitées
+                conformément au Règlement Général sur la Protection des Données (RGPD).
+                Pour plus d&apos;informations, consultez notre{" "}
+                <Link
+                  href="/politique-de-confidentialite"
+                  className="text-[var(--cab-gold)] hover:underline font-semibold"
+                >
+                  Politique de Confidentialité
+                </Link>
+                .
+              </p>
             </div>
+          </div>
+
+          {/* Contact */}
+          <div className="card bg-[var(--cab-gray)] text-center">
+            <p className="text-gray-700">
+              Pour toute question relative aux présentes CGV, contactez-nous :
+            </p>
+            <p className="mt-2">
+              <a href="tel:+33176380017" className="text-[var(--cab-gold)] font-semibold hover:underline">
+                01 76 38 00 17
+              </a>
+              {" | "}
+              <a href="mailto:contact@cab-formations.fr" className="text-[var(--cab-gold)] font-semibold hover:underline">
+                contact@cab-formations.fr
+              </a>
+            </p>
           </div>
         </div>
       </section>
